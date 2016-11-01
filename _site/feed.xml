@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-11-01T09:41:02+08:00</updated><id>/</id><title>Liang Peng</title><subtitle>Keep Hungry Stay Foolish</subtitle><entry><title>Dota2 starts fail</title><link href="/mac-write-issue/" rel="alternate" type="text/html" title="Dota2 starts fail" /><published>2016-10-15T00:00:00+08:00</published><updated>2016-10-15T00:00:00+08:00</updated><id>/mac-write-issue</id><content type="html" xml:base="/mac-write-issue/"></content><summary></summary></entry><entry><title>You’re up and running!</title><link href="/Hello-World/" rel="alternate" type="text/html" title="You're up and running!" /><published>2014-03-03T00:00:00+08:00</published><updated>2014-03-03T00:00:00+08:00</updated><id>/Hello-World</id><content type="html" xml:base="/Hello-World/">&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-11-01T09:57:12+08:00</updated><id>/</id><title>Liang Peng</title><subtitle>Keep Hungry Stay Foolish</subtitle><entry><title>蛋疼的Mac升级导致的应用启动问题</title><link href="/mac-write-issue/" rel="alternate" type="text/html" title="蛋疼的Mac升级导致的应用启动问题" /><published>2016-10-15T00:00:00+08:00</published><updated>2016-10-15T00:00:00+08:00</updated><id>/mac-write-issue</id><content type="html" xml:base="/mac-write-issue/">&lt;p&gt;一直以为mac体验无敌，但是这次蛋疼的问题让我回归了理性。。。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
+
+&lt;p&gt;闲暇时候会玩玩dota2，有了imac以后，就迁移到mac上，今天开机后突然就无法进入Dota，报错：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;only one instance of the game can be running at one time&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;程序员本能 - 杀进程&lt;/h2&gt;
+
+&lt;p&gt;本着程序员的本能，这应该是已经有进程在运行吧，打开终端，打开任务监控器，杀掉Dota2相关的进程&lt;/p&gt;
+
+&lt;p&gt;然而并没有卵用&lt;/p&gt;
+
+&lt;p&gt;反倒是发现每次启动报错后，Dota2会新建一个进程上报本次错误。。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;重装游戏&lt;/h2&gt;
+
+&lt;p&gt;开始进入百度、Google，有大神说重装一下steam就好了，于是直接重新安装11G的程序。。。&lt;/p&gt;
+
+&lt;p&gt;然而并没有卵用&lt;/p&gt;
+
+&lt;p&gt;问题依旧。。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;修复系统&lt;/h2&gt;
+
+&lt;p&gt;灵光一现，开机的时候有一个报出一个错误，会不会和这个错误有关呢&lt;/p&gt;
+
+&lt;p&gt;重启机器，截图查看错误信息，发现是/tmp目录没有写权限&lt;/p&gt;
+
+&lt;p&gt;想到经常用/tmp目录来保存检查进程存在的临时文件，貌似找到了原因&lt;/p&gt;
+
+&lt;p&gt;Google写权限问题，找到修复方法&lt;/p&gt;
+
+&lt;p&gt;重启Dota2，成功 ：）&lt;/p&gt;</content><summary>一直以为mac体验无敌，但是这次蛋疼的问题让我回归了理性。。。</summary></entry><entry><title>You’re up and running!</title><link href="/Hello-World/" rel="alternate" type="text/html" title="You're up and running!" /><published>2014-03-03T00:00:00+08:00</published><updated>2014-03-03T00:00:00+08:00</updated><id>/Hello-World</id><content type="html" xml:base="/Hello-World/">&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;
 
