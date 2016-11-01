@@ -10,6 +10,7 @@ description: Keep Hungry Stay Foolish
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://github.com/ictlpeng/ictlpeng.github.io/blob/master/images/my-logo.png?raw=true
+#avatar: {{ site.baseurl }}/images/my-logo.png
 
 #
 # Flags below are optional
