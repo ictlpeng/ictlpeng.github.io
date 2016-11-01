@@ -4,12 +4,23 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Institution of Computing Technology, Chinese Academy of Sciences
 
-### More Information
+## Experience
 
-A place to include any other types of information that you'd like to include about yourself.
+![an image alt text]({{ site.baseurl }}/images/telecom.png "an image title")
 
-### Contact me
+**Distributed Message Queue / Database / Transaction middleware**
+
+![an image alt text]({{ site.baseurl }}/images/baidu.png "an image title")
+
+**Distributed Authentication & Authorization System**
+
+![an image alt text]({{ site.baseurl }}/images/tencent.png "an image title")
+
+**IAAS component: Cloud Resource Schedule System**
+
+
+## Contact me
 
 [ictlpeng@qq.com](mailto:ictlpeng@qq.com)

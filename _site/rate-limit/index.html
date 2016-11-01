@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>有趣的流控实现 – Liang Peng – Stay Hungry Stay Foolish</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="项目中有碰到流控的需求，之前基于令牌桶自己简单实现了一个，今天在git上找了找，原来Google的guava库中也实现了一个，看了下代码，实现思路挺有意思
+
+" />
+    <meta property="og:description" content="项目中有碰到流控的需求，之前基于令牌桶自己简单实现了一个，今天在git上找了找，原来Google的guava库中也实现了一个，看了下代码，实现思路挺有意思
+
+" />
+    
+    <meta name="author" content="Liang Peng" />
+
+    
+    <meta property="og:title" content="有趣的流控实现" />
+    <meta property="twitter:title" content="有趣的流控实现" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Liang Peng - Stay Hungry Stay Foolish" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://github.com/ictlpeng/ictlpeng.github.io/blob/master/images/my-logo.png?raw=true" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Liang Peng</a></h1>
+            <p class="site-description">Stay Hungry Stay Foolish</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>有趣的流控实现</h1>
+
+  <div class="entry">
+    <p>项目中有碰到流控的需求，之前基于令牌桶自己简单实现了一个，今天在git上找了找，原来Google的guava库中也实现了一个，看了下代码，实现思路挺有意思</p>
+
+<h2 id="section">问题描述</h2>
+
+<p>流控问题，结合我的需求，用一个场景来描述就是排队买面包</p>
+
+<blockquote>
+  <p>假设某面包餐厅，有N个服务员（线程），每个服务员每次只能服务一个客户（作业），餐厅的面包生产速率有限，固定为X个/秒，每个客户可以买一个或者多个面包，客户分不同的类别，每一类客户可能有一个限定的购买速率，如Xn个/秒</p>
+</blockquote>
+
+<h2 id="google">google的实现</h2>
+
+<p>从形象的角度，google的实现是如下：</p>
+
+<p>面包分为store面包和fresh面包</p>
+
+<p>每个客户可以去到服务员那里，说出他想要的面包数，如果：</p>
+
+<p><code class="highlighter-rouge">
+1. 当store面包数（每次计算当前时间 - 上次时间应该生产的面包数），大于需要的数量，直接给客户
+</code></p>
+
+<p><code class="highlighter-rouge">
+2. 当store面包数不够，则按照速率X，计算出需要等待多少时间，让当前用户等待（sleep），其他服务员，在当前等待的基础上，再进行等待
+</code></p>
+
+<p><strong>优点</strong> ：节省资源</p>
+
+<p><strong>缺点</strong> ：利用率不足，且无法合理满足分类客户的速率</p>
+
+<h2 id="section-1">简单实现</h2>
+
+<p>简单实现思路如下：</p>
+
+<p>只有一个store面包数，后台有个线程按照指定速率增加面包数量</p>
+
+<p>每个客户可以去服务员哪里，说出他想要的面包树，如果</p>
+
+<p><code class="highlighter-rouge">
+1. 当store面包数，大于需要的数量，直接给客户
+</code></p>
+
+<p><code class="highlighter-rouge">
+2. 当store面包数不够，直接告诉客户面包不够，客户再问一次，或者，服务下一个
+</code></p>
+
+<p><strong>优点</strong> ：实现简单，实时性好，容易实现分类客户的速率控制</p>
+
+<p><strong>缺点</strong> ：频繁请求资源浪费，线程无用功多</p>
+
+
+  </div>
+
+  <div class="date">
+    Written on October 30, 2016
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/barryclark/jekyll-now"><i class="svg-icon github"></i></a>
+
+
+
+
+<a href="https://www.twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
