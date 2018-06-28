@@ -10,15 +10,17 @@ Institution of Computing Technology, Chinese Academy of Sciences
 
 ![an image alt text]({{ site.baseurl }}/images/telecom.png "an image title")
 
-**Distributed Message Queue / Database / Transaction middleware**
+** Distributed Message Queue / Database / Transaction middleware **
+
+** Kubernetes / MicroService / PaaS **
 
 ![an image alt text]({{ site.baseurl }}/images/baidu.png "an image title")
 
-**Distributed Authentication & Authorization System**
+** Distributed Authentication & Authorization System **
 
 ![an image alt text]({{ site.baseurl }}/images/tencent.png "an image title")
 
-**IAAS component: Cloud Resource Schedule System**
+** IAAS component: Cloud Resource Schedule System **
 
 
 ## Contact me
