@@ -9,3 +9,5 @@ title: 使用databus实现mysql与redis的数据同步
 1）设置mysql（使用binlog replication的方式读取数据）
 
 参考：http://dev.mysql.com/doc/refman/5.5/en/replication-howto.html
+
+
